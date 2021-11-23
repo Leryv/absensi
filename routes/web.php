@@ -18,8 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::group(['prefix'=>'master-data'], function(){
-    route::get('siswa','SiswaController@index')->name('master-data.siswa');
+    Route::get('/siswa', 'SiswaController@index')->name('master-data.siswa');
+    Route::get('/kelas', 'KelasController@index')->name('master-data.kelas');
 });
 
 Route::get('login/github','GithubController@redirectToProvider');
