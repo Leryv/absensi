@@ -13,13 +13,17 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
+    'github'=>[
+        'client_id'=> env('GITHUB_CLIENT_ID'),
+        'client_secret'=> env('GITHUB_CLIENT_SECRET'),
+        'redirect'=>env('http://localhost/absensi/public/login/github/callback'),
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
-
     'ses' => [
         'key' => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
@@ -39,5 +43,4 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
-
 ];
