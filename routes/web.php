@@ -26,3 +26,9 @@ Route::group(['prefix'=>'master-data'], function(){
 
 Route::get('login/github','GithubController@redirectToProvider');
 Route::get('login/github/callback','GithubController@handleProviderCallback');
+
+
+Route::group(['prefix'=>'users'], function(){
+    Route::get('/','UserController@index')->name('users');
+    Route::get('/create','UserController@create')->name('users.create');
+});

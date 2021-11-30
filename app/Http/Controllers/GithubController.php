@@ -14,7 +14,8 @@ class GithubController extends Controller
         return Socialite::driver('github')->redirect();
     }
 
-    public function handleProviderCallback(){
+    public function handleProviderCallback()
+    {
         try {
             $user = Socialite::driver('github')->user();
         } catch (Exception $e){
