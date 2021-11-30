@@ -80,12 +80,13 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md"> 
+                <div class="title m-b-md">
                     Absensi Sekolah
                 </div>
 
                 <div class="links">
-                    <a href="#"> Home </a>
+                    <a href="home"> Home </a>
+                    <a href="#"> Dashboard </a>
                 </div>
             </div>
         </div>
