@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Route ke home
 Route::get('home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'=>'master-data'], function(){
