@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel mb-4">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+        <a class="navbar-brand font-weight-bold font-italic" href="{{ url('/') }}">
+            {{ config('', 'Absensi') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -9,19 +9,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
+
             <ul class="navbar-nav mr-auto">
+
                 <li class="nav-item">
-                    <a href="" class="nav-link">Dashboard</a>
+                    <a href="{{route('users')}}" class="nav-link" >User</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('manage.user')}}" class="nav-link">Manage User</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Manage Lessons</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Manage Class</a>
-                </li>
+
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -45,7 +39,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
+                                        document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
