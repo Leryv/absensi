@@ -6,7 +6,7 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-header border-0 bg-white shadow-sm">
                     <div class="d-flex justify-content-end">
-                        <a href="{{route('lessons.create')}}" class="btn btn-outline-info">Invite New Member</a>
+                        <a href="{{route('class.create')}}" class="btn btn-outline-info">Invite New Member</a>
                         <a href="{{route('home')}}" class="btn btn-outline-secondary ml-3">Back To Home</a>
                     </div>
                 </div>
@@ -17,10 +17,10 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>User name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Phone</th>
+                                    <th>Nama Kelas</th>
+                                    <th>Wali Kelas</th>
+                                    <th>Jurusan</th>
+                                    <th>Jumlah siswa</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>

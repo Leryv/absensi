@@ -12,7 +12,7 @@
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Dashboard</a>
+                    <a href="{{route('home')}}" class="nav-link">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('users')}}" class="nav-link" >Manage User</a>
@@ -21,7 +21,7 @@
                     <a href="{{route('lessons')}}" class="nav-link">Manage Lessons</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Manage Class</a>
+                    <a href="{{route('class')}}" class="nav-link">Manage Class</a>
                 </li>
 
             </ul>

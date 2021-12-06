@@ -40,3 +40,9 @@ Route::group(['prefix'=>'lesson'], function(){
     Route::get('/add/form/invit','LessonController@create')->name('lessons.create');
 });
 
+Route::group(['prefix'=>'class'], function(){
+    Route::get('/','ClassController@index')->name('class');
+    Route::get('/add/form/invit','ClassController@create')->name('class.create');
+});
+
+
