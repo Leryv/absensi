@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -33,3 +34,9 @@ Route::group(['prefix'=>'users'], function(){
     Route::get('/','UserController@index')->name('users');
     Route::get('/create','UserController@create')->name('users.create');
 });
+
+Route::group(['prefix'=>'lesson'], function(){
+    Route::get('/','LessonController@index')->name('lessons');
+    Route::get('/add/form/invit','LessonController@create')->name('lessons.create');
+});
+
