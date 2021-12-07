@@ -11,7 +11,7 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="#" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -23,7 +23,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Wali Kelas</label>
-                                    <select name="" class="form-control" id="">
+                                    <select name="class" class="form-control" id="">
                                         <option value="">Pilih Wali Kelas</option>
                                     </select>
                                 </div>
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="mt-2 ml-3">
-                                <button class="btn btn-outline-info">Invite Member</button>
+                                <button class="btn btn-outline-info">Tambah Kelas </button>
                                 <a href="{{route('home')}}" class="btn btn-outline-secondary">Back To Home</a>
                             </div>
                         </div>

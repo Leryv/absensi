@@ -32,17 +32,32 @@ Route::get('login/github/callback','GithubController@handleProviderCallback');
 
 Route::group(['prefix'=>'users'], function(){
     Route::get('/','UserController@index')->name('users');
-    Route::get('/create','UserController@create')->name('users.create');
+    Route::get('/add/form/user','UserController@create')->name('users.create');
 });
 
 Route::group(['prefix'=>'lesson'], function(){
     Route::get('/','LessonController@index')->name('lessons');
-    Route::get('/add/form/invit','LessonController@create')->name('lessons.create');
+    Route::get('/add/form/lesson','LessonController@create')->name('lessons.create');
 });
 
 Route::group(['prefix'=>'class'], function(){
     Route::get('/','ClassController@index')->name('class');
-    Route::get('/add/form/invit','ClassController@create')->name('class.create');
+    Route::get('/add/form/class','ClassController@create')->name('class.create');
 });
 
+Route::group(['prefix'=>'store'], function(){
+Route::post('lesson','LessonController@store')->name('store.lesson');
+});
+
+Route::group(['prefix' => 'edit'], function () {
+    route::get('lesson/{lesson}', 'LessonController@edit')->name('edit.lessons');
+});
+
+Route::group(['prefix' => 'update'], function () {
+    route::patch('lesson/{lesson}', 'LessonController@update')->name('update.lessons');
+});
+
+Route::group(['prefix' => 'destroy'], function () {
+    route::delete('lesson/{lesson}', 'LessonController@destroy')->name('destroy.lessons');
+});
 
