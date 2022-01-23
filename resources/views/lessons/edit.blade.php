@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <div class="mt-2 ml-3">
-                                <button class="btn btn-outline-info"> Update </button>
+                                <button class="btn btn-outline-info"> Ubah </button>
                                 <a href="{{route('lessons')}}" class="btn btn-outline-secondary">Back To Home</a>
                             </div>
                         </div>
