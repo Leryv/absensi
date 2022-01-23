@@ -11,5 +11,4 @@ class Lesson extends Model
     protected $fillable = [
         'name', 'teacher', 'class', 'jam_masuk', 'jam_selesai'
     ];
-
 }

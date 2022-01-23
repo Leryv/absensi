@@ -20,6 +20,7 @@ class CreateLessonsTable extends Migration
             $table->string('class');
             $table->string('jam_masuk');
             $table->string('jam_selesai');
+
             $table->timestamps();
         });
     }
