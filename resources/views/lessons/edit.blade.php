@@ -60,8 +60,8 @@
                                 </div>
                             </div>
                             <div class="mt-2 ml-3">
-                                <button class="btn btn-outline-info">Add New Lesson</button>
-                                <a href="{{route('home')}}" class="btn btn-outline-secondary">Back To Home</a>
+                                <button class="btn btn-outline-info"> Update </button>
+                                <a href="{{route('lessons')}}" class="btn btn-outline-secondary">Back To Home</a>
                             </div>
                         </div>
                     </form>

@@ -10,9 +10,10 @@ class LessonController extends Controller
     public function index()
     {
         $lessons = Lesson::latest()->paginate(6);
-        // $lessons = Lesson::all();
         return view('lessons.index', compact('lessons'));
+            // $lessons = Lesson::all();
     }
+
     public function create()
     {
         return view('lessons.create');
@@ -29,17 +30,20 @@ class LessonController extends Controller
         ]);
 
         $lessons = Lesson::create($request->all());
+
         return redirect()->back();
     }
 
     public function edit($id)
+
     {
         $lesson = Lesson::findOrFail($id);
 
-        return view('lessons.edit', compact('lessons'));
+        return view('lessons.edit', compact('lesson'));
     }
 
     public function update(Request $request, $id)
+
     {
         $lesson = Lesson::findOrFail($id);
 
@@ -49,6 +53,7 @@ class LessonController extends Controller
     }
 
     public function destroy(Request $request, $id)
+
     {
         $lesson = Lesson::findOrFail($id);
 

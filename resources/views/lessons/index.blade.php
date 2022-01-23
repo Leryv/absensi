@@ -26,15 +26,15 @@
                             <tbody>
                                 @forelse ($lessons as $lesson)
                                     <tr>
-                                        <td>{{$lesson->name}}</td>
                                         <td>{{$lesson->teacher}}</td>
+                                        <td>{{$lesson->name}}</td>
                                         <td>{{$lesson->class}}</td>
                                         <td>{{$lesson->jam_masuk}} - {{$lesson->jam_selesai}}</td>
                                         <td>
-                                            <form action="#" method="POST">
+                                            <form action="{{route('destroy.lesson', $lesson->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="#" class="btn btn-info btn-sm">Edit lesson</a>
+                                                <a href="{{route('edit.lesson',$lesson->id)}}" class="btn btn-info btn-sm">Edit lesson</a>
                                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                             </form>
 
@@ -47,7 +47,9 @@
                                         </td>
                                     </tr>
                                 @endforelse
+
                             </tbody>
+
                         </table>
 
                         {{$lessons->links()}}
@@ -59,5 +61,3 @@
 </div>
 
 @endsection
-{{--  {{route('destroy.lesson', $lesson->id)}}  --}}
-{{--  {{route('edit.lesson',$lesson->id)}}  --}}
