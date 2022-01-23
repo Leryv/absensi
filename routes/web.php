@@ -47,17 +47,22 @@ Route::group(['prefix'=>'class'], function(){
 
 Route::group(['prefix'=>'store'], function(){
 Route::post('lesson','LessonController@store')->name('store.lesson');
+Route::post('class','ClassController@store')->name('store.lesson');
+
 });
 
 Route::group(['prefix' => 'edit'], function () {
     route::get('lesson/{lesson}', 'LessonController@edit')->name('edit.lesson');
+    route::get('class/{class}', 'ClassController@edit')->name('edit.class');
 });
 
 Route::group(['prefix' => 'update'], function () {
     route::patch('lesson/{lesson}', 'LessonController@update')->name('update.lesson');
+    route::patch('class/{class}', 'ClassController@update')->name('update.class');
 });
 
 Route::group(['prefix' => 'destroy'], function () {
     route::delete('lesson/{lesson}', 'LessonController@destroy')->name('destroy.lesson');
+    route::delete('class/{class}', 'ClassController@destroy')->name('destroy.class');
 });
 
