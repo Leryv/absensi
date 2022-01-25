@@ -41,8 +41,8 @@ Route::group(['prefix'=>'lesson'], function(){
 });
 
 Route::group(['prefix'=>'class'], function(){
-    Route::get('/','Manage\ClassController@index')->name('manage.class');
-    Route::get('/add/form/class','Manage\ClassController@create')->name('manage.add.form.kelas');
+    Route::get('/','Manage\ClassController@index')->name('manage.kelas');
+    Route::get('/add/form/kelas','Manage\ClassController@create')->name('manage.add.form.kelas');
 });
 
 Route::group(['prefix'=>'store'], function(){

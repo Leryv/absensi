@@ -13,12 +13,12 @@ class CreateClasTable extends Migration
      */
     public function up()
     {
-        Schema::create('clas', function (Blueprint $table) {
+        Schema::create('class', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('capacity');
-            $table->string('wali_kelas');
+            $table->string('walas');
             $table->string('jurusan');
+            $table->string('jumlah');
 
             $table->timestamps();
         });

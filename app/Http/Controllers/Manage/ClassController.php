@@ -9,12 +9,12 @@ class ClassController extends Controller
 {
     // index
     public function index(){
-        $class = Clas::latest()->paginate(6);
-        return view('manage.class.index', compact('class'));
+        $classes = Clas::latest()->paginate(6);
+        return view('manage.kelas.index', compact('classes'));
     }
 
     public function create(){
-        return view('manage.class.create');
+        return view('manage.kelas.create');
     }
 
     public function store(Request $request)
@@ -43,7 +43,7 @@ class ClassController extends Controller
         $class = Clas::all()->find($id);
 //        $class = Clas::findOrFail(1);
 
-        return view('manage.class.edit', compact('class'));
+        return view('manage.kelas.edit', compact('class'));
     }
 
     public function update(Request $request, $id)

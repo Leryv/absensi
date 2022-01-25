@@ -50,7 +50,8 @@ class UserController extends Controller
         }
 
         return Redirect::back();
-    }
+        }
+
         // edit
         public function edit($id)
         {

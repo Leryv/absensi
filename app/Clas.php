@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clas extends Model
 {
-    protected $table = "clas";
+    protected $table = "class";
     protected $fillable = [
-        'name', 'teacher', 'class', 'jam_masuk', 'jam_selesai'
+        'name', 'walas', 'jurusan', 'jumlah'
     ];
 
 }
