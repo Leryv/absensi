@@ -30,39 +30,45 @@ Route::get('login/github','GithubController@redirectToProvider');
 Route::get('login/github/callback','GithubController@handleProviderCallback');
 
 
-Route::group(['prefix'=>'users'], function(){
-    Route::get('/','UserController@index')->name('users');
-    Route::get('/add/form/user','UserController@create')->name('users.create');
+Route::group(['prefix'=>'user'], function(){
+    Route::get('/','Manage\UserController@index')->name('manage.user');
+    Route::get('/add/form/user','Manage\UserController@create')->name('manage.add.form.invite');
 });
 
 Route::group(['prefix'=>'lesson'], function(){
-    Route::get('/','LessonController@index')->name('lessons');
-    Route::get('/add/form/lesson','LessonController@create')->name('lessons.create');
+    Route::get('/','Manage\LessonController@index')->name('manage.lessons');
+    Route::get('/add/form/lesson','Manage\LessonController@create')->name('manage.add.form.lesson');
 });
 
 Route::group(['prefix'=>'class'], function(){
-    Route::get('/','ClassController@index')->name('class');
-    Route::get('/add/form/class','ClassController@create')->name('class.create');
+    Route::get('/','Manage\ClassController@index')->name('manage.class');
+    Route::get('/add/form/class','Manage\ClassController@create')->name('manage.add.form.kelas');
 });
 
 Route::group(['prefix'=>'store'], function(){
-Route::post('lesson','LessonController@store')->name('store.lesson');
-Route::post('class','ClassController@store')->name('store.lesson');
+Route::post('lessons','Manage\LessonController@store')->name('store.lesson');
+Route::post('kelas','Manage\ClassController@store')->name('store.class');
+Route::post('user','Manage\UserController@store')->name('store.user');
 
 });
 
 Route::group(['prefix' => 'edit'], function () {
-    route::get('lesson/{lesson}', 'LessonController@edit')->name('edit.lesson');
-    route::get('class/{class}', 'ClassController@edit')->name('edit.class');
+    route::get('lesson/{lesson}', 'Manage\LessonController@edit')->name('edit.lesson');
+    route::get('kelas/{id}','Manage\ClassController@edit')->name('edit.class');
+    route::get('user/{id}','Manage\UserController@edit')->name('edit.user');
+
 });
 
 Route::group(['prefix' => 'update'], function () {
-    route::patch('lesson/{lesson}', 'LessonController@update')->name('update.lesson');
-    route::patch('class/{class}', 'ClassController@update')->name('update.class');
+    route::patch('lesson/{lesson}', 'Manage\LessonController@update')->name('update.lesson');
+    route::patch('kelas/{id}', 'Manage\ClassController@update')->name('update.class');
+    route::patch('user/{id}','Manage\UserController@edit')->name('update.user');
+
 });
 
 Route::group(['prefix' => 'destroy'], function () {
-    route::delete('lesson/{lesson}', 'LessonController@destroy')->name('destroy.lesson');
-    route::delete('class/{class}', 'ClassController@destroy')->name('destroy.class');
+    route::delete('lesson/{lesson}', 'Manage\LessonController@destroy')->name('destroy.lesson');
+    route::delete('kelas/{id}', 'Manage\ClassController@destroy')->name('destroy.class');
+    route::delete('user/{id}','Manage\UserController@edit')->name('destroy.user');
 });
 
