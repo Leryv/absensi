@@ -38,8 +38,8 @@
                                             <form action="{{route('destroy.user', $user->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="#" class="btn btn-info btn-sm">Edit lesson</a>
-                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                {{--  <a href="#" class="btn btn-info btn-sm">Edit lesson</a>
+                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>  --}}
                                             </form>
 
                                         </td>
