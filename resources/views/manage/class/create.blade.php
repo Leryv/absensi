@@ -11,7 +11,7 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="#" method="post">
+                    <form action="{{route('store.class')}}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">

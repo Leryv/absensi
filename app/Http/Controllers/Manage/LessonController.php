@@ -1,22 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Manage;
 
 use Illuminate\Http\Request;
 use App\Lesson;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Console\Presets\React;
 class LessonController extends Controller
 {
     public function index()
     {
         $lessons = Lesson::latest()->paginate(6);
-        return view('lessons.index', compact('lessons'));
+        return view('manage.lessons.index', compact('lessons'));
             // $lessons = Lesson::all();
     }
 
     public function create()
     {
-        return view('lessons.create');
+        return view('manage.lessons.create');
     }
 
     public function store(Request $request)
@@ -29,8 +30,7 @@ class LessonController extends Controller
             'jam_selesai'   => 'required',
         ]);
 
-        $lessons = Lesson::create($request->all());
-
+        Lesson::create($request->all());
         return redirect()->back();
     }
 
@@ -39,7 +39,7 @@ class LessonController extends Controller
     {
         $lesson = Lesson::findOrFail($id);
 
-        return view('lessons.edit', compact('lesson'));
+        return view('manage.lessons.edit', compact('lesson'));
     }
 
     public function update(Request $request, $id)

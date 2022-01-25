@@ -7,7 +7,7 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-header border-0 bg-white shadow-sm">
                     <div class="d-flex justify-content-end">
-                        <a href="{{route('lessons.create')}}" class="btn btn-outline-info">Add New Lesson</a>
+                        <a href="{{route('manage.add.form.lesson')}}" class="btn btn-outline-info">Add New Lesson</a>
                         <a href="{{route('home')}}" class="btn btn-outline-secondary ml-3">Back To Home</a>
                     </div>
                 </div>

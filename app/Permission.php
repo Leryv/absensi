@@ -14,4 +14,5 @@ class Permission extends \Spatie\Permission\Models\Permission
             'update_user',
         ];
     }
+
 }
