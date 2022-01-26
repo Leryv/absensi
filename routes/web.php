@@ -55,20 +55,20 @@ Route::post('user','Manage\UserController@store')->name('store.user');
 Route::group(['prefix' => 'edit'], function () {
     route::get('lesson/{lesson}', 'Manage\LessonController@edit')->name('edit.lesson');
     route::get('kelas/{id}','Manage\ClassController@edit')->name('edit.class');
-    route::get('user/{id}','Manage\UserController@edit')->name('edit.user');
+    route::get('user/{user}','Manage\UserController@edit')->name('edit.user');
 
 });
 
 Route::group(['prefix' => 'update'], function () {
     route::patch('lesson/{lesson}', 'Manage\LessonController@update')->name('update.lesson');
     route::patch('kelas/{id}', 'Manage\ClassController@update')->name('update.class');
-    route::patch('user/{id}','Manage\UserController@edit')->name('update.user');
+    route::patch('user/{user}','Manage\UserController@update')->name('update.user');
 
 });
 
 Route::group(['prefix' => 'destroy'], function () {
     route::delete('lesson/{lesson}', 'Manage\LessonController@destroy')->name('destroy.lesson');
     route::delete('kelas/{id}', 'Manage\ClassController@destroy')->name('destroy.class');
-    route::delete('user/{id}','Manage\UserController@edit')->name('destroy.user');
+    route::delete('user/{user}','Manage\UserController@edit')->name('destroy.user');
 });
 

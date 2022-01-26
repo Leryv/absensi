@@ -48,7 +48,15 @@
                                     <label for="">Nama Pelajaran</label>
                                     <select type="option" name="name" id="" class="form-control" placeholder="Nama Pelajaran">
                                         <option value="">Pilih Nama Pelajaran</option>
-                                        <option value="1">Ipa</option>
+                                        <option value="Ipa">Ipa</option>
+                                        <option value="Ips">Ips</option>
+                                        <option value="Mtk">Mtk</option>
+                                        <option value="B.Indonesia">B.Indonesia</option>
+                                        <option value="B.Inggris">B.Inggris</option>
+                                        <option value="Produktif">Produktif</option>
+                                        <option value="Pjok">Pjok</option>
+                                        <option value="Pkk">Pkk</option>
+
                                     </select>
                                 </div>
                             </div>

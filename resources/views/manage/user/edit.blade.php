@@ -11,96 +11,118 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('store.user')}}" method="POST">
+                    <form action="{{route('update.user', $user->id)}}" method="POST">
                         @csrf
+                        @method('PATCH')
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">NISN</label>
-                                    <input type="number" name="nisn" id="" class="form-control" placeholder="NISN" required>
+                                    <input type="text" name="nisn" id="" value="{{$user->nisn ?? '-'}}"class="form-control" placeholder="NISN">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="">Nuptk</label>
-                                    <input type="number" name="nuptk" id="" class="form-control" placeholder="NUPTK" required>
+                                    <label for="">NUPTK</label>
+                                    <input type="text" name="nuptk" id="" value="{{$user->nuptk ?? '-'}}" class="form-control" placeholder="Nisn">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">User Name</label>
-                                    <input type="text" name="name" id="" class="form-control" placeholder="User name" required>
+                                    <input type="text" name="name" id="" value="{{$user->name}}"class="form-control" placeholder="User name">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Phone</label>
-                                    <input type="number" name="phone" id="" class="form-control" placeholder="Phone" required>
+                                    <input type="text" name="phone" id="" value="{{$user->phone}}"class="form-control" placeholder="Phone">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Address</label>
-                                    <input type="text" name="address" id="" class="form-control" placeholder="Address" required>
+                                    <input type="text" name="address" id="" value="{{$user->address}}" class="form-control" placeholder="Address">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Gender</label>
                                     <select name="gender" class="form-control" id="">
-                                        <option value="">Select Your Religion</option>
-                                        <option value="Male"> Male </option>
-                                        <option value="Female"> Female </option>
+
+                                        <option value="male"
+                                        {{$user->gender == 'male' ? 'selected':''}}>
+                                            Male
+                                        </option>
+
+                                        <option value="female"
+                                        {{$user->gender == 'female' ? 'selected':''}}>
+                                            Female
+                                        </option>
+
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input type="email" name="email" id="" class="form-control" placeholder="E-mail" required>
+                                    <input type="email" name="email" id="" value="{{$user->email}}" class="form-control" placeholder="E-mail">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Password</label>
-                                    <input type="password" name="password" id="" class="form-control" placeholder="password" required>
+                                    <input type="password" name="password" id="" class="form-control" placeholder="password">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Religion</label>
                                     <select name="religion" class="form-control" id="">
-                                        <option value="">Select Your Religion</option>
-                                        <option value="islam">Islam</option>
-                                        <option value="kristen">Kristen</option>
-                                        <option value="hindu">Hindu</option>
-                                        <option value="budha">Budha</option>
+
+                                        <option value="">Select your religion</option>
+
+                                        <option value="religion"
+                                        {{$user->religion ?? 'Islam'?'selected':''}}>
+                                            Islam
+                                        </option>
+
+                                        <option value="religion"
+                                        {{$user->religion ?? 'Kristen'?'selected':''}}>
+                                            Kristen
+                                        </option>
+
+                                        <option value="religion"
+                                        {{$user->religion ?? 'Hindu'?'selected':''}}>
+                                            Hindu
+                                        </option>
+
+                                        <option value="religion"
+                                        {{$user->religion ?? 'Buddha'?'selected':''}}>
+                                            Buddha
+                                        </option>
+
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="">Akses</label>
-                                    <select name="roles" class="form-control" id="roles">
-                                        <option value=""> Please Select One </option>
-                                        @foreach ($roles as $role)
-                                        <option value="{{$role}}">
-                                            {{$role}}
+                                    <label for="roles">Akses</label>
+                                    <select name="roles" id="roles" class="form-control">
+
+                                        @foreach ($roles as $get)
+                                        <option value= "{{$get}}" {{$user->roles->implode ('name',', ') == $get ? 'selected' : ''}}>
+                                            {{$get}}
                                         </option>
                                         @endforeach
-                                    </select>
 
-                                        @if($errors->has('roles'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('roles') }}</strong>
-                                        </span>
-                                        @endif
+                                    </select>
                                 </div>
                             </div>
 
 
                             <div class="mt-2 ml-3">
-                                <button class="btn btn-outline-info">Invite Member</button>
+                                <button class="btn btn-primary">Ubah Data</button>
                                 <a href="{{route('home')}}" class="btn btn-outline-secondary">Back To Home</a>
                             </div>
                         </div>

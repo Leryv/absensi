@@ -13,8 +13,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::paginate(8);
-        return view('manage.user.index', compact('users'));
+        $users = User::latest()->paginate(8);
+        return view('manage.user.index',
+        compact('users'));
     }
     public function create()
     {
@@ -38,7 +39,7 @@ class UserController extends Controller
 
 
         $request->merge(
-            ['password' => bcrypt(
+            ['password' => encrypt(
                 $request->get('password'))
             ]
         );
@@ -55,17 +56,22 @@ class UserController extends Controller
         // edit
         public function edit($id)
         {
-            $users = User ::all()->find($id);
+            $user = User ::findOrFail($id);
+            $roles = Role::pluck('name', 'id');
 
-            return view('manage.user.edit', compact('users'));
+            return view('manage.user.edit',
+            compact('user','roles'));
         }
 
         // update
         public function update(Request $request, $id)
         {
-            $users = User::findOrFail($id);
+            $user = User::findOrFail($id);
+            $user -> fill($request->except('roles'));
 
-            $users->update($request->all());
+            $user -> save();
+            $user -> syncRoles($request->get('roles'));
+            $user -> update($request->all());
 
             return redirect()->back();
         }
@@ -73,9 +79,9 @@ class UserController extends Controller
         // destroy
         public function destroy(Request $request, $id)
         {
-            $users = User::findOrFail($id);
+            $user = User::findOrFail($id);
 
-            $users->delete($request->all());
+            $user->delete($request->all());
 
             return redirect()->back();
         }

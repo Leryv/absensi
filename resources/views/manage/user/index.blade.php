@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -6,7 +7,7 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-header border-0 bg-white shadow-sm">
                     <div class="d-flex justify-content-end">
-                        <a href="{{route('manage.add.form.invite')}}" class="btn btn-outline-info">Tambah Member</a>
+                        <a href="{{route('manage.add.form.invite')}}" class="btn btn-outline-info">Invite New Member</a>
                         <a href="{{route('home')}}" class="btn btn-outline-secondary ml-3">Back To Home</a>
                     </div>
                 </div>
@@ -19,47 +20,35 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>User name</th>
+                                    <th>User Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
                                     <th>Phone</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tbody>
-                                    @forelse($users as $user)
-                                    <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->phone }}</td>
-                                        <td>
-                                            <form action="{{route('destroy.user', $user->id)}}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                {{--  <a href="#" class="btn btn-info btn-sm">Edit lesson</a>
-                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>  --}}
-                                            </form>
 
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="5" class="text-center">
-                                            Sorry, currently user data is not available, please invite new users
-                                        </td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
+                                @foreach ($users as $record)
+                                <tr>
+                                    <td>{{ $record->name}}</td>
+                                    <td>{{ $record->email}}</td>
+                                    <td>{{ $record->roles->implode('name', ', ')}}</td>
+                                    <td>{{ $record->phone}}</td>
+                                    <td>
+                                        <form action="#" method="post">
+                                            <a href="{{route ('edit.user', $record->id)}}" class="btn btn-outline-info btn-sm">Edit</a>
+                                            <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                @endforeach
                         </table>
-                        {{$users->links()}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
-{{--  {{route('edit.user',$user->id)}}  --}}
+{{--  {{route ('destroy.user')}}  --}}
