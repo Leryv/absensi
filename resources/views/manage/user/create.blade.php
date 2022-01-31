@@ -101,7 +101,7 @@
 
                             <div class="mt-2 ml-3">
                                 <button class="btn btn-outline-info">Invite Member</button>
-                                <a href="{{route('home')}}" class="btn btn-outline-secondary">Back To Home</a>
+                                <a href="{{route('manage.user')}}" class="btn btn-outline-secondary">Back To Home</a>
                             </div>
                         </div>
                     </form>
