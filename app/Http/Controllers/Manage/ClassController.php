@@ -57,9 +57,9 @@ class ClassController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        $clas = Clas::findOrFail($id);
+        $class = Clas::findOrFail($id);
 
-        $clas->delete($request->all());
+        $class->delete($request->all());
 
         return redirect()->back();
     }
