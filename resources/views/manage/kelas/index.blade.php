@@ -32,7 +32,7 @@
                                         <td>{{ $class->jurusan }}</td>
                                         <td>{{ $class->jumlah }}</td>
                                         <td>
-                                            <form action="" method="post">
+                                            <form action="{{route('destroy.class',$class->id)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <a href="{{ route('edit.class', $class->id) }}" class="btn btn-outline-info btn-sm" type="submit">Edit</a>
@@ -41,7 +41,7 @@
                                         </td>
                                         @empty
                                         <td colspan="5" class="text-center">
-                                            Sorry, kelas is not available, please add new class
+                                            Sorry, kelas is not available, TAmbah kelas
                                         </td>
                                     </tr>
                                 </tbody>
