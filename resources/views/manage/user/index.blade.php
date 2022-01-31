@@ -35,7 +35,9 @@
                                     <td>{{ $record->roles->implode('name', ', ')}}</td>
                                     <td>{{ $record->phone}}</td>
                                     <td>
-                                        <form action="#" method="post">
+                                        <form action="{{route('destroy.user',$record->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
                                             <a href="{{route ('edit.user', $record->id)}}" class="btn btn-outline-info btn-sm">Edit</a>
                                             <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
                                         </form>

@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class UserController extends Controller
 {
@@ -77,12 +78,12 @@ class UserController extends Controller
         }
 
         // destroy
+
         public function destroy(Request $request, $id)
         {
+
             $user = User::findOrFail($id);
-
             $user->delete($request->all());
-
             return redirect()->back();
         }
 

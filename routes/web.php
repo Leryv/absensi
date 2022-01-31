@@ -69,6 +69,6 @@ Route::group(['prefix' => 'update'], function () {
 Route::group(['prefix' => 'destroy'], function () {
     route::delete('lesson/{lesson}', 'Manage\LessonController@destroy')->name('destroy.lesson');
     route::delete('kelas/{id}', 'Manage\ClassController@destroy')->name('destroy.class');
-    route::delete('user/{user}','Manage\UserController@edit')->name('destroy.user');
+    route::delete('user/{user}','Manage\UserController@destroy')->name('destroy.user');
 });
 
