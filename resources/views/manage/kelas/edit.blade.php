@@ -7,7 +7,7 @@
                 <div class="card border-0 shadow-sm">
                     <div class="card-header shadow-sm bg-white">
                         <h4 class="text-secondary">
-                            Enter the information to add a new class, enter the class correctly
+                            Silahkan Edit Data
                         </h4>
                     </div>
                     <div class="card-body">
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="mt-2 ml-3">
                                     <button type="submit" class="btn btn-outline-info">Add Class</button>
-                                    <a href="{{ route('home') }}" class="btn btn-outline-secondary">Back To Home</a>
+                                    <a href="{{ route('manage.kelas') }}" class="btn btn-outline-secondary">Back To Home</a>
                                 </div>
                             </div>
                         </form>
