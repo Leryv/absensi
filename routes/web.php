@@ -72,3 +72,12 @@ Route::group(['prefix' => 'destroy'], function () {
     route::delete('user/{user}','Manage\UserController@destroy')->name('destroy.user');
 });
 
+Route::group(['prefix'=>'lesson'], function(){
+    Route::get('/','Manage\LessonController@index')->name('manage.lessons');
+    Route::get('/add/form/lesson','Manage\LessonController@create')->name('manage.add.form.lesson');
+});
+
+Route::group(['prefix'=>'students'], function(){
+    Route::get('student','Manage\StudentController@index')->name('student');
+    Route::get('walikelas','Manage\TeacherController@index')->name('walikelas');
+});
