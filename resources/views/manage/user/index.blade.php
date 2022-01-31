@@ -13,9 +13,17 @@
                 </div>
                 <div class="card-body">
                     <div class="mt-2 mb-2">
-                        <a href="#" class="btn btn-outline-info">Manage Student</a>
-                        <a href="#" class="btn btn-outline-secondary">Manage Teacher</a>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sort By
+                            </button>
+
+                        <div class="dropdown-menu">
+                        <a href="{{route('student')}}" class="btn btn-outline-info dropdown-item">Data Siswa</a>
+                        <a href="{{route('walikelas')}}" class="btn btn-outline-secondary dropdown-item">Data Wali Kelas</a>
+                        </div>
                     </div>
+                </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -54,3 +62,13 @@
 </div>
 @endsection
 {{--  {{route ('destroy.user')}}  --}}
+
+{{--  <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Student</a>
+            <a class="dropdown-item" href="#">Wali Kelas</a>
+        </div>
+    </div>  --}}
